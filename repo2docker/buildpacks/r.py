@@ -215,6 +215,13 @@ class RBuildPack(PythonBuildPack):
                     self.checkpoint_date.isoformat()
                 )
             ),
+            (
+                "${NB_USER}",
+                # configure java
+                r"""
+                R CMD javareconf
+                """
+            ),
         ]
 
     def get_assemble_scripts(self):
